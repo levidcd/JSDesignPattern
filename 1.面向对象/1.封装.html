@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    var catA = {
+      name: "A",
+      eat: function () {
+        console.log("A eat something");
+      },
+    };
+    var catB = {
+      name: "B",
+      eat: function () {
+        console.log("B eat something");
+      },
+    };
+    var catC = {
+      name: "C",
+      eat: function () {
+        console.log("C eat something");
+      },
+    };
+
+    //封装
+    // 工厂模式
+    // function createCat(name) {
+    //   var obj = {};
+    //   obj.name = name;
+    //   obj.eat = function (name) {
+    //     console.log(name + "eat something");
+    //   };
+    // }
+    // var catA = createCat("A");
+    // var catB = createCat("B");
+    // var catC = createCat("C");
+
+    //面向对象
+    function CreateCat(name) {
+      this.name = name;
+      this.eat = function () {
+        console.log(this.name + "eat something");
+      };
+    }
+
+    var catA = new CreateCat("A");
+    var catB = new CreateCat("B");
+    var catC = new CreateCat("C");
+  </script>
+  <body></body>
+</html>

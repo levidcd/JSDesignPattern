@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      // this
+      // arguments this
+      // arguments 存储实参类数组对象
+      // this 指向函数上下文(谁调用就指向谁)
+
+      function bbb() {
+        console.log(this);
+      }
+      var objA = {
+        b: bbb,
+        c: {
+          d: bbb,
+        },
+      };
+      bbb();
+      objA.b();
+      objA.c.d();
+    </script>
+  </head>
+  <body></body>
+</html>

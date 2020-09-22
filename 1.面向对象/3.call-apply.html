@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //call apply 改变this指向
+      function aaa(){
+        console.log(this)
+      }
+      var objA ={
+        b:aaa
+      }
+      aaa() //window
+      objA.b() //objA
+
+      aaa.call(objA) //objA
+      objA.b.call(window) //window
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -6,17 +6,24 @@
     <title>Document</title>
     <script>
       //call apply 改变this指向
-      function aaa(){
-        console.log(this)
+      function aaa(name) {
+        this.name = name;
+        this.age = age;
+        // console.log(this)
       }
-      var objA ={
-        b:aaa
-      }
-      aaa() //window
-      objA.b() //objA
+      var objA = {
+        b: aaa,
+      };
+      // aaa() //window
+      // objA.b() //objA
 
-      aaa.call(objA) //objA
-      objA.b.call(window) //window
+      // aaa.call(objA) //objA
+      // objA.b.call(window) //window
+      aaa.call(objA, "xiaoA", 23);
+      console.log(objA.name, objA.age);
+
+      objA.b.call(window, ["xiaoB", 30]);
+      console.log(window.name, window.age);
     </script>
   </head>
   <body></body>
